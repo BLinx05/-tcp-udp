@@ -1,0 +1,370 @@
+=== UDP Reliable Transfer Server Log ===
+Started at: 2026-06-13 21:51:21
+Listening on port: 12346
+Drop rate: 20%
+
+[2026-06-13 21:51:21.425522] UDP Server started on port 12346
+
+=== UDP Reliable Transfer Client Log ===
+Started at: 2026-06-13 21:51:24
+Server: 127.0.0.1:12346
+StudentID last4: 2412
+Initial timeout: 300.0ms
+Window size: 400 bytes
+Total packets: 30
+
+[2026-06-13 21:51:24.272151] Computed StudentID field: 21328 (0x5350) = 2412 XOR 0x5A3C
+[2026-06-13 21:51:24.273507] 
+--- Three-Way Handshake ---
+[2026-06-13 21:51:24.274450] Server <- ('127.0.0.1', 54301): SYN, Seq=9400, StudentID=21328 (0x5350)
+[2026-06-13 21:51:24.275277] Server: StudentID valid (original=2412)
+[2026-06-13 21:51:24.275964] Server -> ('127.0.0.1', 54301): SYN+ACK, Seq=1717, Ack=9401
+[2026-06-13 21:51:24.275980] Client <- Server: SYN+ACK, Seq=1717, Ack=9401
+[2026-06-13 21:51:24.277439] Client -> Server: ACK, Seq=9401, Ack=1718
+[2026-06-13 21:51:24.277486] Server <- ('127.0.0.1', 54301): ACK, Seq=9401, Ack=1718 (Handshake complete)
+[2026-06-13 21:51:24.278130] Handshake complete. Connection established.
+
+[2026-06-13 21:51:24.278427] Server: Connection established with ('127.0.0.1', 54301), ready to receive data
+[2026-06-13 21:51:24.283267] --- Data Transfer (GBN) ---
+[2026-06-13 21:51:24.284086] Generated 30 packet sizes: [43, 57, 45, 66, 57, 46, 42, 64, 74, 75, 61, 61, 43, 50, 48, 61, 75, 61, 55, 50, 40, 67, 45, 78, 64, 44, 40, 60, 68, 46]
+[2026-06-13 21:51:24.284721] Total data to send: 1686 bytes
+[2026-06-13 21:51:24.285553] Client -> Server: DATA Seq=0, Bytes=[0..42], Len=43
+[2026-06-13 21:51:24.286623] Server: Cumulative ACK updated to 1
+43..99], Len=57
+[2026-06-13 21:51:24.287421] Client -> Server: DATA Seq=2, Bytes=[100..144], Len=45
+[2026-06-13 21:51:24.288086] Client -> Server: DATA Seq=3, Bytes=[145..210], Len=66
+[2026-06-13 21:51:24.288160] Server -> ('127.0.0.1', 54301): ACK, AckNum=1, ServerTime=21:51:24
+[2026-06-13 21:51:24.290411] Server <- ('127.0.0.1', 54301): DATA Seq=1, Len=57
+[2026-06-13 21:51:24.290571] Client -> Server: DATA Seq=4, Bytes=[211..267], Len=57
+[2026-06-13 21:51:24.291424] Server: Cumulative ACK updated to 2
+[2026-06-13 21:51:24.291556] Client -> Server: DATA Seq=5, Bytes=[268..313], Len=46
+[2026-06-13 21:51:24.294499] Server -> ('127.0.0.1', 54301): ACK, AckNum=2, ServerTime=21:51:24
+[2026-06-13 21:51:24.295729] Server <- ('127.0.0.1', 54301): DATA Seq=2, Len=45
+[2026-06-13 21:51:24.296460] Client <- Server: ACK, AckNum=1 (cumulative, base was 0), ServerTime=21:51:24
+[2026-06-13 21:51:24.296553] Server: Cumulative ACK updated to 3
+[2026-06-13 21:51:24.297165]   Packet 0 ACKed: RTT=10.90ms
+[2026-06-13 21:51:24.297932] Server -> ('127.0.0.1', 54301): ACK, AckNum=3, ServerTime=21:51:24
+[2026-06-13 21:51:24.297987] Client -> Server: DATA Seq=7, Bytes=[356..419], Len=64
+[2026-06-13 21:51:24.298918] Server <- ('127.0.0.1', 54301): DATA Seq=3, Len=66
+[2026-06-13 21:51:24.299060] Client <- Server: ACK, AckNum=2 (cumulative, base was 1), ServerTime=21:51:24
+[2026-06-13 21:51:24.300044] Server: Cumulative ACK updated to 4
+[2026-06-13 21:51:24.300109]   Packet 1 ACKed: RTT=12.54ms
+[2026-06-13 21:51:24.300976] Server -> ('127.0.0.1', 54301): ACK, AckNum=4, ServerTime=21:51:24
+[2026-06-13 21:51:24.303301] Client -> Server: DATA Seq=8, Bytes=[420..493], Len=74
+[2026-06-13 21:51:24.304017] Client <- Server: ACK, AckNum=3 (cumulative, base was 2), ServerTime=21:51:24
+[2026-06-13 21:51:24.305122]   Packet 2 ACKed: RTT=16.59ms
+to 5
+[2026-06-13 21:51:24.310232] Client <- Server: ACK, AckNum=4 (cumulative, base was 3), ServerTime=21:51:24
+[2026-06-13 21:51:24.310752]   Packet 3 ACKed: RTT=20.39ms
+[2026-06-13 21:51:24.311994] Server -> ('127.0.0.1', 54301): ACK, AckNum=5, ServerTime=21:51:24
+[2026-06-13 21:51:24.312455] Client -> Server: DATA Seq=9, Bytes=[494..568], Len=75
+[2026-06-13 21:51:24.313129] Client <- Server: ACK, AckNum=5 (cumulative, base was 4), ServerTime=21:51:24
+[2026-06-13 21:51:24.314092]   Packet 4 ACKed: RTT=22.55ms
+[2026-06-13 21:51:24.314237] Server <- ('127.0.0.1', 54301): DATA Seq=5, Len=46
+[2026-06-13 21:51:24.315322] Client -> Server: DATA Seq=10, Bytes=[569..629], Len=61
+[2026-06-13 21:51:24.316837] Server: Cumulative ACK updated to 6
+[2026-06-13 21:51:24.317977] Server -> ('127.0.0.1', 54301): ACK, AckNum=6, ServerTime=21:51:24
+[2026-06-13 21:51:24.318023] Client <- Server: ACK, AckNum=6 (cumulative, base was 5), ServerTime=21:51:24
+[2026-06-13 21:51:24.320065] Server <- ('127.0.0.1', 54301): DATA Seq=6, Len=42
+[2026-06-13 21:51:24.320182]   Packet 5 ACKed: RTT=26.46ms
+[2026-06-13 21:51:24.321344] Client -> Server: DATA Seq=11, Bytes=[630..690], Len=61
+[2026-06-13 21:51:24.321548] Server: Cumulative ACK updated to 7
+[2026-06-13 21:51:24.322545] Server -> ('127.0.0.1', 54301): ACK, AckNum=7, ServerTime=21:51:24
+[2026-06-13 21:51:24.322784] Client <- Server: ACK, AckNum=7 (cumulative, base was 6), ServerTime=21:51:24
+[2026-06-13 21:51:24.324787] Server <- ('127.0.0.1', 54301): DATA Seq=7, Len=64
+[2026-06-13 21:51:24.326554] Client -> Server: DATA Seq=12, Bytes=[691..733], Len=43
+[2026-06-13 21:51:24.326933] Server: Cumulative ACK updated to 8
+[2026-06-13 21:51:24.327882] Client <- Server: ACK, AckNum=8 (cumulative, base was 7), ServerTime=21:51:24
+[2026-06-13 21:51:24.330084]   Packet 7 ACKed: RTT=29.89ms
+[2026-06-13 21:51:24.330254] Server <- ('127.0.0.1', 54301): DATA Seq=8, Len=74
+[2026-06-13 21:51:24.331547] Client -> Server: DATA Seq=13, Bytes=[734..783], Len=50
+[2026-06-13 21:51:24.331675] Server: Cumulative ACK updated to 9
+[2026-06-13 21:51:24.332632] Client <- Server: ACK, AckNum=9 (cumulative, base was 8), ServerTime=21:51:24
+[2026-06-13 21:51:24.333592]   Packet 8 ACKed: RTT=29.33ms
+[2026-06-13 21:51:24.334431] Client -> Server: DATA Seq=14, Bytes=[784..831], Len=48
+[2026-06-13 21:51:24.334982] Server <- ('127.0.0.1', 54301): DATA Seq=9, Len=75
+[2026-06-13 21:51:24.335576] Client -> Server: DATA Seq=15, Bytes=[832..892], Len=61
+[2026-06-13 21:51:24.336036] Server: Cumulative ACK updated to 10
+[2026-06-13 21:51:24.337040] Server -> ('127.0.0.1', 54301): ACK, AckNum=10, ServerTime=21:51:24
+[2026-06-13 21:51:24.337059] Client <- Server: ACK, AckNum=10 (cumulative, base was 9), ServerTime=21:51:24
+[2026-06-13 21:51:24.337882]   Packet 9 ACKed: RTT=24.60ms
+ DATA Seq=10, Len=61 -- [SIMULATED DROP]
+[2026-06-13 21:51:24.338828] Server <- ('127.0.0.1', 54301): DATA Seq=11, Len=61 -- [SIMULATED DROP]
+[2026-06-13 21:51:24.339352] Client -> Server: DATA Seq=16, Bytes=[893..967], Len=75
+[2026-06-13 21:51:24.339899] Server <- ('127.0.0.1', 54301): DATA Seq=12, Len=43
+[2026-06-13 21:51:24.340373] Server: Out-of-order packet (got 12, expected 10), sending ACK=10
+[2026-06-13 21:51:24.341088] Server -> ('127.0.0.1', 54301): ACK, AckNum=10, ServerTime=21:51:24
+[2026-06-13 21:51:24.341107] Client <- Server: ACK, AckNum=10 (cumulative, base was 10), ServerTime=21:51:24
+[2026-06-13 21:51:24.341840] Server <- ('127.0.0.1', 54301): DATA Seq=13, Len=50
+[2026-06-13 21:51:24.342313] Server: Out-of-order packet (got 13, expected 10), sending ACK=10
+[2026-06-13 21:51:24.342994] Server -> ('127.0.0.1', 54301): ACK, AckNum=10, ServerTime=21:51:24
+[2026-06-13 21:51:24.343064] Client <- Server: ACK, AckNum=10 (cumulative, base was 10), ServerTime=21:51:24
+[2026-06-13 21:51:24.343924] Server <- ('127.0.0.1', 54301): DATA Seq=14, Len=48
+[2026-06-13 21:51:24.344563] Server: Out-of-order packet (got 14, expected 10), sending ACK=10
+[2026-06-13 21:51:24.345137] Client <- Server: ACK, AckNum=10 (cumulative, base was 10), ServerTime=21:51:24
+[2026-06-13 21:51:24.345947] Server <- ('127.0.0.1', 54301): DATA Seq=15, Len=61 -- [SIMULATED DROP]
+[2026-06-13 21:51:24.347026] Server <- ('127.0.0.1', 54301): DATA Seq=16, Len=75 -- [SIMULATED DROP]
+[2026-06-13 21:51:24.661297] --- TIMEOUT (300ms, consecutive=1) --- Retransmitting packets 10 to 16
+[2026-06-13 21:51:24.662939] Client -> Server: DATA Seq=10, Bytes=[569..629] -- RETRANSMIT
+[2026-06-13 21:51:24.663161] Server <- ('127.0.0.1', 54301): DATA Seq=10, Len=61
+[2026-06-13 21:51:24.665004] Client -> Server: DATA Seq=11, Bytes=[630..690] -- RETRANSMIT
+[2026-06-13 21:51:24.666500] Server: Cumulative ACK updated to 11
+[2026-06-13 21:51:24.666042] Client -> Server: DATA Seq=12, Bytes=[691..733] -- RETRANSMIT
+[2026-06-13 21:51:24.667626] Server -> ('127.0.0.1', 54301): ACK, AckNum=11, ServerTime=21:51:24
+[2026-06-13 21:51:24.668826] Client -> Server: DATA Seq=13, Bytes=[734..783] -- RETRANSMIT
+[2026-06-13 21:51:24.669903] Client -> Server: DATA Seq=14, Bytes=[784..831] -- RETRANSMIT
+[2026-06-13 21:51:24.670965] Client -> Server: DATA Seq=15, Bytes=[832..892] -- RETRANSMIT
+[2026-06-13 21:51:24.672322] Client -> Server: DATA Seq=16, Bytes=[893..967] -- RETRANSMIT
+[2026-06-13 21:51:24.672549] Server <- ('127.0.0.1', 54301): DATA Seq=11, Len=61
+[2026-06-13 21:51:24.674983] Client <- Server: ACK, AckNum=11 (cumulative, base was 10), ServerTime=21:51:24
+[2026-06-13 21:51:24.676813]   Packet 10 ACKed: RTT=12.04ms
+[2026-06-13 21:51:24.677474] Server: Cumulative ACK updated to 12
+[2026-06-13 21:51:24.678322] Client -> Server: DATA Seq=17, Bytes=[968..1028], Len=61
+[2026-06-13 21:51:24.679948] Server -> ('127.0.0.1', 54301): ACK, AckNum=12, ServerTime=21:51:24
+[2026-06-13 21:51:24.680256] Client <- Server: ACK, AckNum=12 (cumulative, base was 11), ServerTime=21:51:24
+[2026-06-13 21:51:24.681656]   Packet 11 ACKed: RTT=15.25ms
+[2026-06-13 21:51:24.681458] Server <- ('127.0.0.1', 54301): DATA Seq=12, Len=43 -- [SIMULATED DROP]
+[2026-06-13 21:51:24.684084] Client -> Server: DATA Seq=18, Bytes=[1029..1083], Len=55
+[2026-06-13 21:51:24.687822] Server <- ('127.0.0.1', 54301): DATA Seq=13, Len=50 -- [SIMULATED DROP]
+[2026-06-13 21:51:24.691694] Server <- ('127.0.0.1', 54301): DATA Seq=14, Len=48
+[2026-06-13 21:51:24.696920] Server: Out-of-order packet (got 14, expected 12), sending ACK=12
+[2026-06-13 21:51:24.700353] Server -> ('127.0.0.1', 54301): ACK, AckNum=12, ServerTime=21:51:24
+[2026-06-13 21:51:24.700476] Client <- Server: ACK, AckNum=12 (cumulative, base was 12), ServerTime=21:51:24
+[2026-06-13 21:51:24.706575] Server <- ('127.0.0.1', 54301): DATA Seq=15, Len=61
+[2026-06-13 21:51:24.707818] Server: Out-of-order packet (got 15, expected 12), sending ACK=12
+[2026-06-13 21:51:24.709066] Server -> ('127.0.0.1', 54301): ACK, AckNum=12, ServerTime=21:51:24
+[2026-06-13 21:51:24.709174] Client <- Server: ACK, AckNum=12 (cumulative, base was 12), ServerTime=21:51:24
+[2026-06-13 21:51:24.710109] Server <- ('127.0.0.1', 54301): DATA Seq=16, Len=75
+[2026-06-13 21:51:24.710863] Server: Out-of-order packet (got 16, expected 12), sending ACK=12
+[2026-06-13 21:51:24.711728] Server -> ('127.0.0.1', 54301): ACK, AckNum=12, ServerTime=21:51:24
+[2026-06-13 21:51:24.711750] Client <- Server: ACK, AckNum=12 (cumulative, base was 12), ServerTime=21:51:24
+[2026-06-13 21:51:24.713387] Server <- ('127.0.0.1', 54301): DATA Seq=17, Len=61
+[2026-06-13 21:51:24.714131] Server: Out-of-order packet (got 17, expected 12), sending ACK=12
+[2026-06-13 21:51:24.715414] Server -> ('127.0.0.1', 54301): ACK, AckNum=12, ServerTime=21:51:24
+[2026-06-13 21:51:24.715440] Client <- Server: ACK, AckNum=12 (cumulative, base was 12), ServerTime=21:51:24
+[2026-06-13 21:51:24.716630] Server <- ('127.0.0.1', 54301): DATA Seq=18, Len=55
+[2026-06-13 21:51:24.717846] Server: Out-of-order packet (got 18, expected 12), sending ACK=12
+[2026-06-13 21:51:24.719383] Server -> ('127.0.0.1', 54301): ACK, AckNum=12, ServerTime=21:51:24
+[2026-06-13 21:51:24.719433] Client <- Server: ACK, AckNum=12 (cumulative, base was 12), ServerTime=21:51:24
+[2026-06-13 21:51:25.033617] --- TIMEOUT (300ms, consecutive=1) --- Retransmitting packets 12 to 18
+[2026-06-13 21:51:25.034580] Client -> Server: DATA Seq=12, Bytes=[691..733] -- RETRANSMIT
+[2026-06-13 21:51:25.035738] Client -> Server: DATA Seq=13, Bytes=[734..783] -- RETRANSMIT
+[2026-06-13 21:51:25.035704] Server: Cumulative ACK updated to 13
+[2026-06-13 21:51:25.036890] Client -> Server: DATA Seq=14, Bytes=[784..831] -- RETRANSMIT
+[2026-06-13 21:51:25.037634] Client -> Server: DATA Seq=15, Bytes=[832..892] -- RETRANSMIT
+[2026-06-13 21:51:25.038301] Client -> Server: DATA Seq=16, Bytes=[893..967] -- RETRANSMIT
+[2026-06-13 21:51:25.038430] Server -> ('127.0.0.1', 54301): ACK, AckNum=13, ServerTime=21:51:25
+[2026-06-13 21:51:25.039291] Client -> Server: DATA Seq=17, Bytes=[968..1028] -- RETRANSMIT
+[2026-06-13 21:51:25.039886] Client -> Server: DATA Seq=18, Bytes=[1029..1083] -- RETRANSMIT
+[2026-06-13 21:51:25.040638] Client <- Server: ACK, AckNum=13 (cumulative, base was 12), ServerTime=21:51:25
+[2026-06-13 21:51:25.040997] Server <- ('127.0.0.1', 54301): DATA Seq=13, Len=50
+[2026-06-13 21:51:25.041184]   Packet 12 ACKed: RTT=6.06ms
+[2026-06-13 21:51:25.042365] Client -> Server: DATA Seq=19, Bytes=[1084..1133], Len=50
+[2026-06-13 21:51:25.042541] Server: Cumulative ACK updated to 14
+[2026-06-13 21:51:25.044648] Server -> ('127.0.0.1', 54301): ACK, AckNum=14, ServerTime=21:51:25
+[2026-06-13 21:51:25.044707] Client <- Server: ACK, AckNum=14 (cumulative, base was 13), ServerTime=21:51:25
+[2026-06-13 21:51:25.046411] Server <- ('127.0.0.1', 54301): DATA Seq=14, Len=48
+[2026-06-13 21:51:25.046285]   Packet 13 ACKed: RTT=8.96ms
+[2026-06-13 21:51:25.047771] Server: Cumulative ACK updated to 15
+[2026-06-13 21:51:25.048143] Client -> Server: DATA Seq=20, Bytes=[1134..1173], Len=40
+[2026-06-13 21:51:25.049535] Client <- Server: ACK, AckNum=15 (cumulative, base was 14), ServerTime=21:51:25
+[2026-06-13 21:51:25.049513] Server -> ('127.0.0.1', 54301): ACK, AckNum=15, ServerTime=21:51:25
+[2026-06-13 21:51:25.050539]   Packet 14 ACKed: RTT=12.64ms
+[2026-06-13 21:51:25.053120] Server <- ('127.0.0.1', 54301): DATA Seq=15, Len=61 -- [SIMULATED DROP]
+[2026-06-13 21:51:25.055789] Server <- ('127.0.0.1', 54301): DATA Seq=16, Len=75
+[2026-06-13 21:51:25.057073] Server: Out-of-order packet (got 16, expected 15), sending ACK=15
+[2026-06-13 21:51:25.057784] Server -> ('127.0.0.1', 54301): ACK, AckNum=15, ServerTime=21:51:25
+e=21:51:25
+[2026-06-13 21:51:25.058987] Server <- ('127.0.0.1', 54301): DATA Seq=17, Len=61 -- [SIMULATED DROP]
+[2026-06-13 21:51:25.059704] Server <- ('127.0.0.1', 54301): DATA Seq=18, Len=55 -- [SIMULATED DROP]
+[2026-06-13 21:51:25.060390] Server <- ('127.0.0.1', 54301): DATA Seq=19, Len=50
+[2026-06-13 21:51:25.061880] Server: Out-of-order packet (got 19, expected 15), sending ACK=15
+[2026-06-13 21:51:25.062628] Server -> ('127.0.0.1', 54301): ACK, AckNum=15, ServerTime=21:51:25
+[2026-06-13 21:51:25.062652] Client <- Server: ACK, AckNum=15 (cumulative, base was 15), ServerTime=21:51:25
+[2026-06-13 21:51:25.063785] Server <- ('127.0.0.1', 54301): DATA Seq=20, Len=40
+[2026-06-13 21:51:25.065362] Server: Out-of-order packet (got 20, expected 15), sending ACK=15
+[2026-06-13 21:51:25.066200] Server -> ('127.0.0.1', 54301): ACK, AckNum=15, ServerTime=21:51:25
+[2026-06-13 21:51:25.066223] Client <- Server: ACK, AckNum=15 (cumulative, base was 15), ServerTime=21:51:25
+[2026-06-13 21:51:25.378028] --- TIMEOUT (300ms, consecutive=1) --- Retransmitting packets 15 to 20
+[2026-06-13 21:51:25.379540] Client -> Server: DATA Seq=15, Bytes=[832..892] -- RETRANSMIT
+[2026-06-13 21:51:25.379603] Server <- ('127.0.0.1', 54301): DATA Seq=15, Len=61 -- [SIMULATED DROP]
+[2026-06-13 21:51:25.381219] Client -> Server: DATA Seq=16, Bytes=[893..967] -- RETRANSMIT
+[2026-06-13 21:51:25.381533] Server <- ('127.0.0.1', 54301): DATA Seq=16, Len=75
+[2026-06-13 21:51:25.382596] Server: Out-of-order packet (got 16, expected 15), sending ACK=15
+[2026-06-13 21:51:25.382824] Client -> Server: DATA Seq=17, Bytes=[968..1028] -- RETRANSMIT
+[2026-06-13 21:51:25.384307] Client -> Server: DATA Seq=18, Bytes=[1029..1083] -- RETRANSMIT
+25
+[2026-06-13 21:51:25.385428] Server <- ('127.0.0.1', 54301): DATA Seq=17, Len=61
+RETRANSMIT
+[2026-06-13 21:51:25.386714] Client -> Server: DATA Seq=20, Bytes=[1134..1173] -- RETRANSMIT
+[2026-06-13 21:51:25.386839] Server: Out-of-order packet (got 17, expected 15), sending ACK=15
+[2026-06-13 21:51:25.387837] Client <- Server: ACK, AckNum=15 (cumulative, base was 15), ServerTime=21:51:25
+[2026-06-13 21:51:25.388675] Client <- Server: ACK, AckNum=15 (cumulative, base was 15), ServerTime=21:51:25
+[2026-06-13 21:51:25.388057] Server -> ('127.0.0.1', 54301): ACK, AckNum=15, ServerTime=21:51:25
+[2026-06-13 21:51:25.389803] Server <- ('127.0.0.1', 54301): DATA Seq=18, Len=55
+[2026-06-13 21:51:25.390337] Server: Out-of-order packet (got 18, expected 15), sending ACK=15
+[2026-06-13 21:51:25.390880] Server -> ('127.0.0.1', 54301): ACK, AckNum=15, ServerTime=21:51:25
+[2026-06-13 21:51:25.390903] Client <- Server: ACK, AckNum=15 (cumulative, base was 15), ServerTime=21:51:25
+[2026-06-13 21:51:25.392160] Server <- ('127.0.0.1', 54301): DATA Seq=19, Len=50 -- [SIMULATED DROP]
+[2026-06-13 21:51:25.392725] Server <- ('127.0.0.1', 54301): DATA Seq=20, Len=40
+[2026-06-13 21:51:25.393256] Server: Out-of-order packet (got 20, expected 15), sending ACK=15
+[2026-06-13 21:51:25.394224] Server -> ('127.0.0.1', 54301): ACK, AckNum=15, ServerTime=21:51:25
+e=21:51:25
+[2026-06-13 21:51:25.705846] --- TIMEOUT (300ms, consecutive=2) --- Retransmitting packets 15 to 20
+[2026-06-13 21:51:25.715172] Client -> Server: DATA Seq=15, Bytes=[832..892] -- RETRANSMIT
+[2026-06-13 21:51:25.715262] Server <- ('127.0.0.1', 54301): DATA Seq=15, Len=61
+[2026-06-13 21:51:25.717385] Client -> Server: DATA Seq=16, Bytes=[893..967] -- RETRANSMIT
+[2026-06-13 21:51:25.718471] Client -> Server: DATA Seq=17, Bytes=[968..1028] -- RETRANSMIT
+[2026-06-13 21:51:25.718908] Server: Cumulative ACK updated to 16
+[2026-06-13 21:51:25.720185] Server -> ('127.0.0.1', 54301): ACK, AckNum=16, ServerTime=21:51:25
+[2026-06-13 21:51:25.719704] Client -> Server: DATA Seq=18, Bytes=[1029..1083] -- RETRANSMIT
+[2026-06-13 21:51:25.722230] Client -> Server: DATA Seq=19, Bytes=[1084..1133] -- RETRANSMIT
+[2026-06-13 21:51:25.723111] Server <- ('127.0.0.1', 54301): DATA Seq=16, Len=75
+[2026-06-13 21:51:25.723823] Client -> Server: DATA Seq=20, Bytes=[1134..1173] -- RETRANSMIT
+[2026-06-13 21:51:25.725437] Client <- Server: ACK, AckNum=16 (cumulative, base was 15), ServerTime=21:51:25
+[2026-06-13 21:51:25.726264]   Packet 15 ACKed: RTT=10.28ms
+[2026-06-13 21:51:25.728613] Server: Cumulative ACK updated to 17
+1174..1240], Len=67
+[2026-06-13 21:51:25.731303] Client -> Server: DATA Seq=22, Bytes=[1241..1285], Len=45
+[2026-06-13 21:51:25.732686] Client <- Server: ACK, AckNum=17 (cumulative, base was 16), ServerTime=21:51:25
+[2026-06-13 21:51:25.732518] Server -> ('127.0.0.1', 54301): ACK, AckNum=17, ServerTime=21:51:25
+[2026-06-13 21:51:25.734046] Server <- ('127.0.0.1', 54301): DATA Seq=17, Len=61
+[2026-06-13 21:51:25.735451] Server: Cumulative ACK updated to 18
+[2026-06-13 21:51:25.735794] Client -> Server: DATA Seq=23, Bytes=[1286..1363], Len=78
+[2026-06-13 21:51:25.737017] Server -> ('127.0.0.1', 54301): ACK, AckNum=18, ServerTime=21:51:25
+[2026-06-13 21:51:25.737308] Client <- Server: ACK, AckNum=18 (cumulative, base was 17), ServerTime=21:51:25
+[2026-06-13 21:51:25.738526] Server <- ('127.0.0.1', 54301): DATA Seq=18, Len=55
+[2026-06-13 21:51:25.738673]   Packet 17 ACKed: RTT=18.83ms
+[2026-06-13 21:51:25.739659] Server: Cumulative ACK updated to 19
+[2026-06-13 21:51:25.740135] Client -> Server: DATA Seq=24, Bytes=[1364..1427], Len=64
+[2026-06-13 21:51:25.740412] Server -> ('127.0.0.1', 54301): ACK, AckNum=19, ServerTime=21:51:25
+[2026-06-13 21:51:25.741040] Client <- Server: ACK, AckNum=19 (cumulative, base was 18), ServerTime=21:51:25
+[2026-06-13 21:51:25.741773] Server <- ('127.0.0.1', 54301): DATA Seq=19, Len=50
+[2026-06-13 21:51:25.741939]   Packet 18 ACKed: RTT=21.34ms
+[2026-06-13 21:51:25.742857] Client -> Server: DATA Seq=25, Bytes=[1428..1471], Len=44
+[2026-06-13 21:51:25.743233] Server: Cumulative ACK updated to 20
+[2026-06-13 21:51:25.744025] Server -> ('127.0.0.1', 54301): ACK, AckNum=20, ServerTime=21:51:25
+[2026-06-13 21:51:25.744044] Client <- Server: ACK, AckNum=20 (cumulative, base was 19), ServerTime=21:51:25
+[2026-06-13 21:51:25.744952]   Packet 19 ACKed: RTT=21.81ms
+[2026-06-13 21:51:25.744990] Server <- ('127.0.0.1', 54301): DATA Seq=20, Len=40 -- [SIMULATED DROP]
+[2026-06-13 21:51:25.746028] Server <- ('127.0.0.1', 54301): DATA Seq=21, Len=67 -- [SIMULATED DROP]
+[2026-06-13 21:51:25.747363] Server <- ('127.0.0.1', 54301): DATA Seq=22, Len=45
+[2026-06-13 21:51:25.748753] Server: Out-of-order packet (got 22, expected 20), sending ACK=20
+[2026-06-13 21:51:25.749441] Server -> ('127.0.0.1', 54301): ACK, AckNum=20, ServerTime=21:51:25
+[2026-06-13 21:51:25.749464] Client <- Server: ACK, AckNum=20 (cumulative, base was 20), ServerTime=21:51:25
+[2026-06-13 21:51:25.751017] Server <- ('127.0.0.1', 54301): DATA Seq=23, Len=78
+[2026-06-13 21:51:25.751577] Server: Out-of-order packet (got 23, expected 20), sending ACK=20
+[2026-06-13 21:51:25.759070] Server -> ('127.0.0.1', 54301): ACK, AckNum=20, ServerTime=21:51:25
+[2026-06-13 21:51:25.759244] Client <- Server: ACK, AckNum=20 (cumulative, base was 20), ServerTime=21:51:25
+[2026-06-13 21:51:25.761883] Server <- ('127.0.0.1', 54301): DATA Seq=24, Len=64
+[2026-06-13 21:51:25.762575] Server: Out-of-order packet (got 24, expected 20), sending ACK=20
+[2026-06-13 21:51:25.765176] Server -> ('127.0.0.1', 54301): ACK, AckNum=20, ServerTime=21:51:25
+e=21:51:25
+[2026-06-13 21:51:25.766077] Server <- ('127.0.0.1', 54301): DATA Seq=25, Len=44 -- [SIMULATED DROP]
+[2026-06-13 21:51:25.766780] Server <- ('127.0.0.1', 54301): DATA Seq=26, Len=40
+[2026-06-13 21:51:25.767377] Server: Out-of-order packet (got 26, expected 20), sending ACK=20
+[2026-06-13 21:51:25.768313] Server -> ('127.0.0.1', 54301): ACK, AckNum=20, ServerTime=21:51:25
+[2026-06-13 21:51:25.768338] Client <- Server: ACK, AckNum=20 (cumulative, base was 20), ServerTime=21:51:25
+[2026-06-13 21:51:26.069932] --- TIMEOUT (300ms, consecutive=1) --- Retransmitting packets 20 to 26
+[2026-06-13 21:51:26.070781] Client -> Server: DATA Seq=20, Bytes=[1134..1173] -- RETRANSMIT
+[2026-06-13 21:51:26.072147] Client -> Server: DATA Seq=21, Bytes=[1174..1240] -- RETRANSMIT
+[2026-06-13 21:51:26.070855] Server <- ('127.0.0.1', 54301): DATA Seq=20, Len=40
+[2026-06-13 21:51:26.073474] Client -> Server: DATA Seq=22, Bytes=[1241..1285] -- RETRANSMIT
+[2026-06-13 21:51:26.073450] Server: Cumulative ACK updated to 21
+[2026-06-13 21:51:26.075641] Server -> ('127.0.0.1', 54301): ACK, AckNum=21, ServerTime=21:51:26
+[2026-06-13 21:51:26.077071] Client -> Server: DATA Seq=23, Bytes=[1286..1363] -- RETRANSMIT
+[2026-06-13 21:51:26.077925] Client -> Server: DATA Seq=24, Bytes=[1364..1427] -- RETRANSMIT
+[2026-06-13 21:51:26.078614] Client -> Server: DATA Seq=25, Bytes=[1428..1471] -- RETRANSMIT
+[2026-06-13 21:51:26.079113] Server <- ('127.0.0.1', 54301): DATA Seq=21, Len=67
+[2026-06-13 21:51:26.079339] Client -> Server: DATA Seq=26, Bytes=[1472..1511] -- RETRANSMIT
+[2026-06-13 21:51:26.080021] Server: Cumulative ACK updated to 22
+[2026-06-13 21:51:26.080348] Client <- Server: ACK, AckNum=21 (cumulative, base was 20), ServerTime=21:51:26
+[2026-06-13 21:51:26.081120]   Packet 20 ACKed: RTT=9.56ms
+[2026-06-13 21:51:26.081765] Server -> ('127.0.0.1', 54301): ACK, AckNum=22, ServerTime=21:51:26
+[2026-06-13 21:51:26.082748] Server <- ('127.0.0.1', 54301): DATA Seq=22, Len=45
+[2026-06-13 21:51:26.083472] Server: Cumulative ACK updated to 23
+[2026-06-13 21:51:26.083138] Client -> Server: DATA Seq=27, Bytes=[1512..1571], Len=60
+[2026-06-13 21:51:26.084418] Server -> ('127.0.0.1', 54301): ACK, AckNum=23, ServerTime=21:51:26
+[2026-06-13 21:51:26.084664] Client <- Server: ACK, AckNum=22 (cumulative, base was 21), ServerTime=21:51:26
+[2026-06-13 21:51:26.087181]   Packet 21 ACKed: RTT=12.51ms
+[2026-06-13 21:51:26.087552] Server <- ('127.0.0.1', 54301): DATA Seq=23, Len=78
+[2026-06-13 21:51:26.088388] Client -> Server: DATA Seq=28, Bytes=[1572..1639], Len=68
+[2026-06-13 21:51:26.088417] Server: Cumulative ACK updated to 24
+[2026-06-13 21:51:26.089633] Server -> ('127.0.0.1', 54301): ACK, AckNum=24, ServerTime=21:51:26
+[2026-06-13 21:51:26.089316] Client <- Server: ACK, AckNum=23 (cumulative, base was 22), ServerTime=21:51:26
+[2026-06-13 21:51:26.090358]   Packet 22 ACKed: RTT=15.84ms
+[2026-06-13 21:51:26.090460] Server <- ('127.0.0.1', 54301): DATA Seq=24, Len=64
+[2026-06-13 21:51:26.091563] Server: Cumulative ACK updated to 25
+[2026-06-13 21:51:26.091715] Client -> Server: DATA Seq=29, Bytes=[1640..1685], Len=46
+[2026-06-13 21:51:26.092380] Server -> ('127.0.0.1', 54301): ACK, AckNum=25, ServerTime=21:51:26
+[2026-06-13 21:51:26.092723] Client <- Server: ACK, AckNum=24 (cumulative, base was 23), ServerTime=21:51:26
+[2026-06-13 21:51:26.093638]   Packet 23 ACKed: RTT=15.65ms
+[2026-06-13 21:51:26.093948] Server <- ('127.0.0.1', 54301): DATA Seq=25, Len=44
+[2026-06-13 21:51:26.094631] Client <- Server: ACK, AckNum=25 (cumulative, base was 24), ServerTime=21:51:26
+[2026-06-13 21:51:26.095403]   Packet 24 ACKed: RTT=16.70ms
+[2026-06-13 21:51:26.095165] Server: Cumulative ACK updated to 26
+[2026-06-13 21:51:26.097414] Client <- Server: ACK, AckNum=26 (cumulative, base was 25), ServerTime=21:51:26
+[2026-06-13 21:51:26.097415] Server -> ('127.0.0.1', 54301): ACK, AckNum=26, ServerTime=21:51:26
+[2026-06-13 21:51:26.098482]   Packet 25 ACKed: RTT=18.79ms
+[2026-06-13 21:51:26.098695] Server <- ('127.0.0.1', 54301): DATA Seq=26, Len=40
+[2026-06-13 21:51:26.099726] Server: Cumulative ACK updated to 27
+[2026-06-13 21:51:26.100902] Client <- Server: ACK, AckNum=27 (cumulative, base was 26), ServerTime=21:51:26
+[2026-06-13 21:51:26.100878] Server -> ('127.0.0.1', 54301): ACK, AckNum=27, ServerTime=21:51:26
+[2026-06-13 21:51:26.102851]   Packet 26 ACKed: RTT=21.55ms
+[2026-06-13 21:51:26.103090] Server <- ('127.0.0.1', 54301): DATA Seq=27, Len=60 -- [SIMULATED DROP]
+[2026-06-13 21:51:26.103977] Server <- ('127.0.0.1', 54301): DATA Seq=28, Len=68
+[2026-06-13 21:51:26.104731] Server: Out-of-order packet (got 28, expected 27), sending ACK=27
+[2026-06-13 21:51:26.105331] Client <- Server: ACK, AckNum=27 (cumulative, base was 27), ServerTime=21:51:26
+[2026-06-13 21:51:26.105308] Server -> ('127.0.0.1', 54301): ACK, AckNum=27, ServerTime=21:51:26
+[2026-06-13 21:51:26.106688] Server <- ('127.0.0.1', 54301): DATA Seq=29, Len=46 -- [SIMULATED DROP]
+[2026-06-13 21:51:26.413511] --- TIMEOUT (300ms, consecutive=1) --- Retransmitting packets 27 to 29
+[2026-06-13 21:51:26.414481] Client -> Server: DATA Seq=27, Bytes=[1512..1571] -- RETRANSMIT
+[2026-06-13 21:51:26.414530] Server <- ('127.0.0.1', 54301): DATA Seq=27, Len=60 -- [SIMULATED DROP]
+[2026-06-13 21:51:26.415613] Client -> Server: DATA Seq=28, Bytes=[1572..1639] -- RETRANSMIT
+[2026-06-13 21:51:26.415726] Server <- ('127.0.0.1', 54301): DATA Seq=28, Len=68
+[2026-06-13 21:51:26.416357] Client -> Server: DATA Seq=29, Bytes=[1640..1685] -- RETRANSMIT
+[2026-06-13 21:51:26.417686] Server: Out-of-order packet (got 28, expected 27), sending ACK=27
+[2026-06-13 21:51:26.421705] Server -> ('127.0.0.1', 54301): ACK, AckNum=27, ServerTime=21:51:26
+[2026-06-13 21:51:26.421811] Client <- Server: ACK, AckNum=27 (cumulative, base was 27), ServerTime=21:51:26
+[2026-06-13 21:51:26.422720] Server <- ('127.0.0.1', 54301): DATA Seq=29, Len=46
+[2026-06-13 21:51:26.423861] Server: Out-of-order packet (got 29, expected 27), sending ACK=27
+[2026-06-13 21:51:26.424776] Client <- Server: ACK, AckNum=27 (cumulative, base was 27), ServerTime=21:51:26
+[2026-06-13 21:51:26.424748] Server -> ('127.0.0.1', 54301): ACK, AckNum=27, ServerTime=21:51:26
+[2026-06-13 21:51:26.726870] --- TIMEOUT (300ms, consecutive=2) --- Retransmitting packets 27 to 29
+[2026-06-13 21:51:26.728139] Client -> Server: DATA Seq=27, Bytes=[1512..1571] -- RETRANSMIT
+[2026-06-13 21:51:26.729938] Server: Cumulative ACK updated to 28
+[2026-06-13 21:51:26.730245] Client -> Server: DATA Seq=28, Bytes=[1572..1639] -- RETRANSMIT
+[2026-06-13 21:51:26.731858] Client -> Server: DATA Seq=29, Bytes=[1640..1685] -- RETRANSMIT
+26
+[2026-06-13 21:51:26.732866] Client <- Server: ACK, AckNum=28 (cumulative, base was 27), ServerTime=21:51:26
+[2026-06-13 21:51:26.732996] Server <- ('127.0.0.1', 54301): DATA Seq=28, Len=68
+[2026-06-13 21:51:26.733722]   Packet 27 ACKed: RTT=4.73ms
+[2026-06-13 21:51:26.733944] Server: Cumulative ACK updated to 29
+[2026-06-13 21:51:26.735144] Server -> ('127.0.0.1', 54301): ACK, AckNum=29, ServerTime=21:51:26
+[2026-06-13 21:51:26.735255] Client <- Server: ACK, AckNum=29 (cumulative, base was 28), ServerTime=21:51:26
+[2026-06-13 21:51:26.737379] Server <- ('127.0.0.1', 54301): DATA Seq=29, Len=46
+[2026-06-13 21:51:26.737497]   Packet 28 ACKed: RTT=5.01ms
+[2026-06-13 21:51:26.738136] Server: Cumulative ACK updated to 30
+[2026-06-13 21:51:26.738962] Client <- Server: ACK, AckNum=30 (cumulative, base was 29), ServerTime=21:51:26
+[2026-06-13 21:51:26.738943] Server -> ('127.0.0.1', 54301): ACK, AckNum=30, ServerTime=21:51:26
+[2026-06-13 21:51:26.739811]   Packet 29 ACKed: RTT=7.10ms
+[2026-06-13 21:51:26.740588] 
+All 30 packets acknowledged by server!
+[2026-06-13 21:51:26.741201] 
+--- Connection Termination ---
+[2026-06-13 21:51:26.741905] Server <- ('127.0.0.1', 54301): FIN, Seq=9402
+[2026-06-13 21:51:26.742899] Client <- Server: FIN+ACK (connection closed)
+[2026-06-13 21:51:26.742880] Server -> ('127.0.0.1', 54301): FIN+ACK
+[2026-06-13 21:51:26.743772] 
+========== 汇总统计 ==========
+[2026-06-13 21:51:26.744481] 总发包次数（含重传）: 69
+[2026-06-13 21:51:26.746538] 重传次数: 39
+[2026-06-13 21:51:26.747205] 成功接收的ACK数: 30
+[2026-06-13 21:51:26.747750] 
+丢包率: 43.48%  (30个唯一包 / 69次总发送)
+[2026-06-13 21:51:26.760127] 最大RTT: 29.89 ms
+[2026-06-13 21:51:26.760728] 最小RTT: 4.73 ms
+[2026-06-13 21:51:26.761558] 平均RTT: 16.38 ms
+[2026-06-13 21:51:26.763436] RTT标准差: 7.19 ms
+[2026-06-13 21:51:26.763893] 
+Client finished.

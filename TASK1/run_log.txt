@@ -1,0 +1,62 @@
+=== TCP Reverse Server Log ===
+Started at: 2026-06-13 19:35:50
+Listening on 0.0.0.0:12345
+
+[2026-06-13 19:35:50.972231] Server started, listening on 0.0.0.0:12345
+
+=== TCP Reverse Client Log ===
+Started at: 2026-06-13 19:35:52
+Server: 127.0.0.1:12345
+Input file: sample_ascii.txt
+Lmin=50, Lmax=100, seed=42
+
+[2026-06-13 19:35:52.880342] Read input file: 742 bytes
+[2026-06-13 19:35:52.881766] Chunk size sequence: [90, 57, 51, 97, 67, 65, 64, 58, 97, 96]
+[2026-06-13 19:35:52.882387] Total blocks (N): 10
+[2026-06-13 19:35:52.884825] New connection from 127.0.0.1:60363
+[2026-06-13 19:35:52.908934] Connected to server 127.0.0.1:12345
+[2026-06-13 19:35:52.909782] Client -> Server: Initialization (Type=1), N=10
+[2026-06-13 19:35:52.909872] Server <- Client (127.0.0.1:60363): Initialization (Type=1), N=10
+[2026-06-13 19:35:52.910902] Client <- Server: agree (Type=2)
+[2026-06-13 19:35:52.910911] Server -> Client (127.0.0.1:60363): agree (Type=2)
+[2026-06-13 19:35:52.912101] Client -> Server: reverseRequest (Type=3), Length=90, Block=1/10, Bytes=[0..89]
+[2026-06-13 19:35:52.912195] Server <- Client (127.0.0.1:60363): reverseRequest (Type=3), Length=90, Block=1/10
+[2026-06-13 19:35:52.913240] Server -> Client (127.0.0.1:60363): reverseAnswer (Type=4), Length=90, Block=1/10
+[2026-06-13 19:35:52.913248] Client <- Server: reverseAnswer (Type=4), Length=90, Block=1/10
+[2026-06-13 19:35:52.914822] Server <- Client (127.0.0.1:60363): reverseRequest (Type=3), Length=57, Block=2/10
+[2026-06-13 19:35:52.915630] Client <- Server: reverseAnswer (Type=4), Length=57, Block=2/10
+h=57, Block=2/10
+[2026-06-13 19:35:52.916511] Client -> Server: reverseRequest (Type=3), Length=51, Block=3/10, Bytes=[147..197]
+[2026-06-13 19:35:52.916588] Server <- Client (127.0.0.1:60363): reverseRequest (Type=3), Length=51, Block=3/10
+[2026-06-13 19:35:52.917072] Server -> Client (127.0.0.1:60363): reverseAnswer (Type=4), Length=51, Block=3/10
+[2026-06-13 19:35:52.917116] Client <- Server: reverseAnswer (Type=4), Length=51, Block=3/10
+[2026-06-13 19:35:52.918178] Client -> Server: reverseRequest (Type=3), Length=97, Block=4/10, Bytes=[198..294]
+[2026-06-13 19:35:52.918184] Server <- Client (127.0.0.1:60363): reverseRequest (Type=3), Length=97, Block=4/10
+[2026-06-13 19:35:52.919046] Server -> Client (127.0.0.1:60363): reverseAnswer (Type=4), Length=97, Block=4/10
+[2026-06-13 19:35:52.919098] Client <- Server: reverseAnswer (Type=4), Length=97, Block=4/10
+[2026-06-13 19:35:52.920026] Client -> Server: reverseRequest (Type=3), Length=67, Block=5/10, Bytes=[295..361]
+[2026-06-13 19:35:52.920103] Server <- Client (127.0.0.1:60363): reverseRequest (Type=3), Length=67, Block=5/10
+[2026-06-13 19:35:52.921563] Server -> Client (127.0.0.1:60363): reverseAnswer (Type=4), Length=67, Block=5/10
+[2026-06-13 19:35:52.921573] Client <- Server: reverseAnswer (Type=4), Length=67, Block=5/10
+[2026-06-13 19:35:52.922769] Server <- Client (127.0.0.1:60363): reverseRequest (Type=3), Length=65, Block=6/10
+[2026-06-13 19:35:52.923636] Server -> Client (127.0.0.1:60363): reverseAnswer (Type=4), Length=65, Block=6/10
+[2026-06-13 19:35:52.924893] Client -> Server: reverseRequest (Type=3), Length=64, Block=7/10, Bytes=[427..490]
+[2026-06-13 19:35:52.924981] Server <- Client (127.0.0.1:60363): reverseRequest (Type=3), Length=64, Block=7/10
+[2026-06-13 19:35:52.925688] Client <- Server: reverseAnswer (Type=4), Length=64, Block=7/10
+[2026-06-13 19:35:52.925682] Server -> Client (127.0.0.1:60363): reverseAnswer (Type=4), Length=64, Block=7/10
+[2026-06-13 19:35:52.926511] Client -> Server: reverseRequest (Type=3), Length=58, Block=8/10, Bytes=[491..548]
+[2026-06-13 19:35:52.926518] Server <- Client (127.0.0.1:60363): reverseRequest (Type=3), Length=58, Block=8/10
+[2026-06-13 19:35:52.927246] Server -> Client (127.0.0.1:60363): reverseAnswer (Type=4), Length=58, Block=8/10
+[2026-06-13 19:35:52.927249] Client <- Server: reverseAnswer (Type=4), Length=58, Block=8/10
+[2026-06-13 19:35:52.928358] Client -> Server: reverseRequest (Type=3), Length=97, Block=9/10, Bytes=[549..645]
+[2026-06-13 19:35:52.928369] Server <- Client (127.0.0.1:60363): reverseRequest (Type=3), Length=97, Block=9/10
+[2026-06-13 19:35:52.929328] Server -> Client (127.0.0.1:60363): reverseAnswer (Type=4), Length=97, Block=9/10
+[2026-06-13 19:35:52.930041] Client -> Server: reverseRequest (Type=3), Length=96, Block=10/10, Bytes=[646..741]
+[2026-06-13 19:35:52.930645] Server -> Client (127.0.0.1:60363): reverseAnswer (Type=4), Length=96, Block=10/10
+[2026-06-13 19:35:52.930690] Client <- Server: reverseAnswer (Type=4), Length=96, Block=10/10
+[2026-06-13 19:35:52.931526] Client 127.0.0.1:60363 finished successfully (10 blocks processed)
+[2026-06-13 19:35:52.932401] 
+Reversed output written to: sample_ascii_reversed.txt
+[2026-06-13 19:35:52.932353] Connection closed: 127.0.0.1:60363
+[2026-06-13 19:35:52.932935] Total blocks processed: 10, Total bytes: 742
+[2026-06-13 19:35:52.933444] Connection closed

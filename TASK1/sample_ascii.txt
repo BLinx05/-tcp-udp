@@ -1,0 +1,7 @@
+The quick brown fox jumps over the lazy dog near the riverbank.
+A gentle breeze blew through the open window, carrying the scent of spring flowers into the quiet room.
+Computer networks connect devices across the globe, enabling communication and data sharing at unprecedented speeds.
+The TCP protocol provides reliable, ordered, and error-checked delivery of a stream of bytes between applications.
+Learning socket programming is essential for understanding how network applications communicate at the transport layer.
+Every journey begins with a single step, and every expert was once a beginner who never gave up on their dreams.
+The sun set slowly behind the mountains, painting the sky in brilliant shades of orange and purple twilight.
