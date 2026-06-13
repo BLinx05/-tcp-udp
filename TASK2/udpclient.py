@@ -1,24 +1,3 @@
-#!/usr/bin/env python3
-"""
-UDP Reliable Transfer Client with GBN Protocol
-Simulates TCP-like connection establishment and Go-Back-N reliable data
-transfer over UDP.
-
-Features:
-  - Three-way handshake with StudentID field
-  - GBN sliding window protocol (400-byte window)
-  - Variable packet sizes (40-80 bytes)
-  - Timeout-based retransmission
-  - RTT calculation and statistics via pandas
-  - Comprehensive logging
-
-Usage:
-    python udpclient.py <serverIP> <serverPort> [student_id_last4] [timeout_ms]
-
-Example:
-    python udpclient.py 127.0.0.1 12346 1234 300
-"""
-
 import socket
 import struct
 import random
