@@ -15,7 +15,7 @@ Usage:
     Default drop_rate: 0.2 (20% packet drop probability)
 """
 
-import socket
+7import socket
 import struct
 import random
 import sys
